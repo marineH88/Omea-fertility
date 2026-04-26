@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oméa Fertilité</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- SVG sprite — icônes réutilisables -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <!-- Guillemets / quote -->
+      <symbol id="icon-quote" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M16 3C15.4696 3 14.9609 3.21071 14.5858 3.58579C14.2107 3.96086 14 4.46957 14 5V11C14 11.5304 14.2107 12.0391 14.5858 12.4142C14.9609 12.7893 15.4696 13 16 13C16.2652 13 16.5196 13.1054 16.7071 13.2929C16.8946 13.4804 17 13.7348 17 14V15C17 15.5304 16.7893 16.0391 16.4142 16.4142C16.0391 16.7893 15.5304 17 15 17C14.7348 17 14.4804 17.1054 14.2929 17.2929C14.1054 17.4804 14 17.7348 14 18V20C14 20.2652 14.1054 20.5196 14.2929 20.7071C14.4804 20.8946 14.7348 21 15 21C16.5913 21 18.1174 20.3679 19.2426 19.2426C20.3679 18.1174 21 16.5913 21 15V5C21 4.46957 20.7893 3.96086 20.4142 3.58579C20.0391 3.21071 19.5304 3 19 3H16Z"
+          stroke="#F19880"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M5 3C4.46957 3 3.96086 3.21071 3.58579 3.58579C3.21071 3.96086 3 4.46957 3 5V11C3 11.5304 3.21071 12.0391 3.58579 12.4142C3.96086 12.7893 4.46957 13 5 13C5.26522 13 5.51957 13.1054 5.70711 13.2929C5.89464 13.4804 6 13.7348 6 14V15C6 15.5304 5.78929 16.0391 5.41421 16.4142C5.03914 16.7893 4.53043 17 4 17C3.73478 17 3.48043 17.1054 3.29289 17.2929C3.10536 17.4804 3 17.7348 3 18V20C3 20.2652 3.10536 20.5196 3.29289 20.7071C3.48043 20.8946 3.73478 21 4 21C5.5913 21 7.11742 20.3679 8.24264 19.2426C9.36786 18.1174 10 16.5913 10 15V5C10 4.46957 9.78929 3.96086 9.41421 3.58579C9.03914 3.21071 8.53043 3 8 3H5Z"
+          stroke="#F19880"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <!-- Avion en papier / send -->
+      <symbol id="icon-send" viewBox="0 0 27 27" fill="none">
+        <path
+          d="M16.353 24.3966C16.3958 24.5031 16.4701 24.594 16.566 24.6571C16.6618 24.7202 16.7747 24.7524 16.8895 24.7495C17.0042 24.7465 17.1153 24.7086 17.2078 24.6407C17.3004 24.5728 17.3699 24.4782 17.4071 24.3696L24.7196 2.99463C24.7557 2.89495 24.7625 2.78707 24.7395 2.68363C24.7164 2.58018 24.6643 2.48545 24.5894 2.4105C24.5145 2.33556 24.4197 2.28351 24.3163 2.26045C24.2128 2.23738 24.105 2.24425 24.0053 2.28026L2.63028 9.59276C2.52171 9.62999 2.42713 9.69954 2.35923 9.79207C2.29133 9.88461 2.25337 9.9957 2.25043 10.1104C2.24749 10.2252 2.27972 10.3381 2.34279 10.4339C2.40586 10.5298 2.49676 10.6041 2.60327 10.6469L11.5245 14.2244C11.8065 14.3373 12.0628 14.5061 12.2778 14.7208C12.4928 14.9354 12.6621 15.1913 12.7755 15.4731L16.353 24.3966Z"
+          stroke="#37231D"
+          stroke-width="1.66667"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M24.5858 2.41553L12.2783 14.7219"
+          stroke="#37231D"
+          stroke-width="1.66667"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <!-- LinkedIn (fondatrices — rose) -->
+      <symbol id="icon-linkedin-pink" viewBox="0 0 20 20" fill="none">
+        <path
+          d="M13.3333 6.6665C14.6593 6.6665 15.9311 7.19329 16.8688 8.13097C17.8065 9.06865 18.3333 10.3404 18.3333 11.6665V17.4998H14.9999V11.6665C14.9999 11.2245 14.8243 10.8006 14.5118 10.488C14.1992 10.1754 13.7753 9.99984 13.3333 9.99984C12.8912 9.99984 12.4673 10.1754 12.1547 10.488C11.8422 10.8006 11.6666 11.2245 11.6666 11.6665V17.4998H8.33325V11.6665C8.33325 10.3404 8.86004 9.06865 9.79772 8.13097C10.7354 7.19329 12.0072 6.6665 13.3333 6.6665Z"
+          stroke="#F19880"
+          stroke-opacity="0.9"
+          stroke-width="1.66667"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M5.00008 7.5H1.66675V17.5H5.00008V7.5Z"
+          stroke="#F19880"
+          stroke-opacity="0.9"
+          stroke-width="1.66667"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M3.33341 4.99984C4.25389 4.99984 5.00008 4.25365 5.00008 3.33317C5.00008 2.4127 4.25389 1.6665 3.33341 1.6665C2.41294 1.6665 1.66675 2.4127 1.66675 3.33317C1.66675 4.25365 2.41294 4.99984 3.33341 4.99984Z"
+          stroke="#F19880"
+          stroke-opacity="0.9"
+          stroke-width="1.66667"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <!-- LinkedIn (footer — blanc) -->
+      <symbol id="icon-linkedin-white" viewBox="0 0 20 20" fill="none">
+        <path
+          d="M13.3333 6.6665C14.6593 6.6665 15.9311 7.19329 16.8688 8.13097C17.8065 9.06865 18.3333 10.3404 18.3333 11.6665V17.4998H14.9999V11.6665C14.9999 11.2245 14.8243 10.8006 14.5118 10.488C14.1992 10.1754 13.7753 9.99984 13.3333 9.99984C12.8912 9.99984 12.4673 10.1754 12.1547 10.488C11.8422 10.8006 11.6666 11.2245 11.6666 11.6665V17.4998H8.33325V11.6665C8.33325 10.3404 8.86004 9.06865 9.79772 8.13097C10.7354 7.19329 12.0072 6.6665 13.3333 6.6665Z"
+          stroke="white"
+          stroke-width="1.66667"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M5.00008 7.5H1.66675V17.5H5.00008V7.5Z"
+          stroke="white"
+          stroke-width="1.66667"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M3.33341 4.99984C4.25389 4.99984 5.00008 4.25365 5.00008 3.33317C5.00008 2.4127 4.25389 1.6665 3.33341 1.6665C2.41294 1.6665 1.66675 2.4127 1.66675 3.33317C1.66675 4.25365 2.41294 4.99984 3.33341 4.99984Z"
+          stroke="white"
+          stroke-width="1.66667"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+    </svg>
+    <header>
+      <img alt="Oméa Fertilité" src="assets/images/logo.png" />
+      <div class="omea-header__right">
+        <nav class="omea-nav">
+          <ul class="omea-nav__list">
+            <li><a class="omea-nav__link" href="#section2">Suivi de PMA</a></li>
+            <li>
+              <a class="omea-nav__link" href="#section3">L'application</a>
+            </li>
+            <li><a class="omea-nav__link" href="#section5">Notre équipe</a></li>
+          </ul>
+        </nav>
+        <button>
+          Application bientôt<br />
+          disponible
+        </button>
+      </div>
+    </header>
+    <section class="omea-section omea-section1">
+      <div class="omea-section__content">
+        <div class="omea-section__left">
+          <h1>
+            Vivez votre parcours PMA<br />
+            <span class="text-secondary">avec sérénité</span>
+          </h1>
+          <p>
+            Un espace bienveillant pour suivre, organiser et vivre votre
+            parcours en toute confiance.
+          </p>
+          <p>Parce que vous méritez d'être bien accompagnée.</p>
+        </div>
+        <div class="omea-section__right">
+          <img
+            alt="Illustration Oméa Fertilité"
+            src="assets/images/illustration.png"
+          />
+        </div>
+      </div>
+      <div class="omea-section__banner">
+        <div class="omea-section__banner__item">
+          <div class="omea-section__banner__icon">
+            <svg
+              width="29"
+              height="26"
+              viewBox="0 0 29 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M23.6667 15.6667C25.6533 13.72 27.6667 11.3867 27.6667 8.33333C27.6667 6.38841 26.8941 4.52315 25.5188 3.14788C24.1435 1.77262 22.2783 1 20.3333 1C17.9867 1 16.3333 1.66667 14.3333 3.66667C12.3333 1.66667 10.68 1 8.33333 1C6.38841 1 4.52315 1.77262 3.14788 3.14788C1.77262 4.52315 1 6.38841 1 8.33333C1 11.4 3 13.7333 5 15.6667L14.3333 25L23.6667 15.6667Z"
+                stroke="#F7F3EE"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <span class="omea-stat">3,9%</span>
+          <p>des naissances en France sont issues d'une PMA</p>
+        </div>
+        <div class="omea-section__banner__item">
+          <div class="omea-section__banner__icon">
+            <svg
+              width="37"
+              height="37"
+              viewBox="0 0 37 37"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_d_40000392_2969)">
+                <path
+                  d="M23.6667 28V25.3333C23.6667 23.9188 23.1048 22.5623 22.1046 21.5621C21.1044 20.5619 19.7478 20 18.3333 20H10.3333C8.91885 20 7.56229 20.5619 6.5621 21.5621C5.5619 22.5623 5 23.9188 5 25.3333V28"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M23.6665 4.17065C24.8102 4.46715 25.823 5.13501 26.5461 6.0694C27.2691 7.0038 27.6614 8.15184 27.6614 9.33332C27.6614 10.5148 27.2691 11.6628 26.5461 12.5972C25.823 13.5316 24.8102 14.1995 23.6665 14.496"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M31.6665 28V25.3333C31.6656 24.1516 31.2723 23.0037 30.5483 22.0698C29.8243 21.1358 28.8107 20.4688 27.6665 20.1733"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M14.3333 14.6667C17.2789 14.6667 19.6667 12.2789 19.6667 9.33333C19.6667 6.38781 17.2789 4 14.3333 4C11.3878 4 9 6.38781 9 9.33333C9 12.2789 11.3878 14.6667 14.3333 14.6667Z"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+          </div>
+          <span class="omea-stat">1 couple sur 5</span>
+          <p>est concerné par l'infertilité</p>
+        </div>
+        <div class="omea-section__banner__item">
+          <div class="omea-section__banner__icon">
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M46 12L27 31L17 21L2 36M46 12H34M46 12V24"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <span class="omea-stat">150 000</span>
+          <p>tentatives de PMA chaque année en France</p>
+        </div>
+      </div>
+    </section>
+    <section id="section2" class="omea-section omea-section2">
+      <h2>
+        Tout ce dont vous avez besoin,<br /><span class="text-secondary"
+          >au même endroit</span
+        >
+      </h2>
+      <p>
+        Une suite d'outils conçus spécifiquement pour alléger votre charge
+        mentale et vous accompagner au quotidien
+      </p>
+      <div class="omea-grid omea-grid--4-columns">
+        <div class="omea-grid__item">
+          <div class="omea-grid__item__icon omea-grid__item__icon--green">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.5 20.5L20.5 10.5C20.9673 10.0421 21.3391 9.49606 21.5941 8.89352C21.849 8.29099 21.982 7.64389 21.9853 6.98965C21.9886 6.33541 21.8622 5.687 21.6133 5.08192C21.3645 4.47684 20.9982 3.92709 20.5355 3.46447C20.0729 3.00184 19.5232 2.63552 18.9181 2.38668C18.313 2.13783 17.6646 2.01141 17.0104 2.01471C16.3561 2.01802 15.709 2.15098 15.1065 2.40593C14.5039 2.66087 13.9579 3.03273 13.5 3.5L3.5 13.5C3.03273 13.9579 2.66087 14.5039 2.40593 15.1065C2.15098 15.709 2.01802 16.3561 2.01471 17.0104C2.01141 17.6646 2.13783 18.313 2.38668 18.9181C2.63552 19.5232 3.00184 20.0729 3.46447 20.5355C3.92709 20.9982 4.47684 21.3645 5.08192 21.6133C5.687 21.8622 6.33541 21.9886 6.98965 21.9853C7.64389 21.982 8.29099 21.849 8.89352 21.5941C9.49606 21.3391 10.0421 20.9673 10.5 20.5Z"
+                stroke="#8B9E7E"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8.5 8.5L15.5 15.5"
+                stroke="#8B9E7E"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <h3>Suivi du protocole</h3>
+          <p>
+            Suivez vos traitements, injections et prises de médicaments
+            facilement
+          </p>
+        </div>
+        <div class="omea-grid__item">
+          <div class="omea-grid__item__icon omea-grid__item__icon--red">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 2V6"
+                stroke="#F19880"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16 2V6"
+                stroke="#F19880"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z"
+                stroke="#F19880"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3 10H21"
+                stroke="#F19880"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <h3>Calendrier</h3>
+          <p>Gérez vos cycles, rendez-vous et rappels facilement</p>
+        </div>
+        <div class="omea-grid__item">
+          <div class="omea-grid__item__icon omea-grid__item__icon--green">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.9 20C9.80858 20.9791 12.0041 21.2443 14.0909 20.7478C16.1777 20.2514 18.0186 19.0259 19.2818 17.2922C20.545 15.5586 21.1474 13.4308 20.9806 11.2922C20.8137 9.15366 19.8886 7.14502 18.3718 5.62824C16.855 4.11146 14.8464 3.1863 12.7078 3.01946C10.5693 2.85263 8.44147 3.45509 6.70782 4.71829C4.97417 5.98149 3.74869 7.82236 3.25222 9.90916C2.75575 11.996 3.02094 14.1915 4 16.1L2 22L7.9 20Z"
+                stroke="#8B9E7E"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <h3>Messagerie sécurisée</h3>
+          <p>
+            Échangez en toute confidentialité avec des professionnels et experts
+          </p>
+        </div>
+        <div class="omea-grid__item">
+          <div class="omea-grid__item__icon omea-grid__item__icon--red">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 14L7.5 11.1C7.66307 10.7761 7.91112 10.5027 8.21761 10.3089C8.5241 10.1152 8.8775 10.0084 9.24 9.99997H20M20 9.99997C20.3055 9.99944 20.6071 10.0689 20.8816 10.2031C21.1561 10.3372 21.3963 10.5325 21.5836 10.7738C21.7709 11.0152 21.9004 11.2963 21.9622 11.5955C22.024 11.8947 22.0164 12.2041 21.94 12.5L20.4 18.5C20.2886 18.9315 20.0362 19.3135 19.6829 19.5853C19.3296 19.857 18.8957 20.003 18.45 20H4C3.46957 20 2.96086 19.7893 2.58579 19.4142C2.21071 19.0391 2 18.5304 2 18V4.99997C2 4.46954 2.21071 3.96083 2.58579 3.58576C2.96086 3.21069 3.46957 2.99997 4 2.99997H7.9C8.23449 2.99669 8.56445 3.07736 8.8597 3.23459C9.15495 3.39183 9.40604 3.6206 9.59 3.89997L10.4 5.09997C10.5821 5.3765 10.83 5.60349 11.1215 5.76058C11.413 5.91766 11.7389 5.99992 12.07 5.99997H18C18.5304 5.99997 19.0391 6.21069 19.4142 6.58576C19.7893 6.96083 20 7.46954 20 7.99997V9.99997Z"
+                stroke="#F19880"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <h3>Classeur médical</h3>
+          <p>Centralisez vos ordonnances, analyses et échographies</p>
+        </div>
+        <div class="omea-grid__item">
+          <div class="omea-grid__item__icon omea-grid__item__icon--green">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 2H9C8.44772 2 8 2.44772 8 3V5C8 5.55228 8.44772 6 9 6H15C15.5523 6 16 5.55228 16 5V3C16 2.44772 15.5523 2 15 2Z"
+                stroke="#8B9E7E"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16 4H18C18.5304 4 19.0391 4.21071 19.4142 4.58579C19.7893 4.96086 20 5.46957 20 6V20C20 20.5304 19.7893 21.0391 19.4142 21.4142C19.0391 21.7893 18.5304 22 18 22H6C5.46957 22 4.96086 21.7893 4.58579 21.4142C4.21071 21.0391 4 20.5304 4 20V6C4 5.46957 4.21071 4.96086 4.58579 4.58579C4.96086 4.21071 5.46957 4 6 4H8"
+                stroke="#8B9E7E"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9 14L11 16L15 12"
+                stroke="#8B9E7E"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <h3>Recommandations personnalisées</h3>
+          <p>Basées sur votre état physique et émotionnel chaque semaine</p>
+        </div>
+        <div class="omea-grid__item">
+          <div class="omea-grid__item__icon omea-grid__item__icon--red">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 7V21"
+                stroke="#F19880"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3 18C2.73478 18 2.48043 17.8946 2.29289 17.7071C2.10536 17.5196 2 17.2652 2 17V4C2 3.73478 2.10536 3.48043 2.29289 3.29289C2.48043 3.10536 2.73478 3 3 3H8C9.06087 3 10.0783 3.42143 10.8284 4.17157C11.5786 4.92172 12 5.93913 12 7C12 5.93913 12.4214 4.92172 13.1716 4.17157C13.9217 3.42143 14.9391 3 16 3H21C21.2652 3 21.5196 3.10536 21.7071 3.29289C21.8946 3.48043 22 3.73478 22 4V17C22 17.2652 21.8946 17.5196 21.7071 17.7071C21.5196 17.8946 21.2652 18 21 18H15C14.2044 18 13.4413 18.3161 12.8787 18.8787C12.3161 19.4413 12 20.2044 12 21C12 20.2044 11.6839 19.4413 11.1213 18.8787C10.5587 18.3161 9.79565 18 9 18H3Z"
+                stroke="#F19880"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <h3>Ressources</h3>
+          <p>Contenus validés par des experts, conseils, articles, vidéos</p>
+        </div>
+        <div class="omea-grid__item">
+          <div class="omea-grid__item__icon omea-grid__item__icon--green">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 14C20.49 12.54 22 10.79 22 8.5C22 7.04131 21.4205 5.64236 20.3891 4.61091C19.3576 3.57946 17.9587 3 16.5 3C14.74 3 13.5 3.5 12 5C10.5 3.5 9.26 3 7.5 3C6.04131 3 4.64236 3.57946 3.61091 4.61091C2.57946 5.64236 2 7.04131 2 8.5C2 10.8 3.5 12.55 5 14L12 21L19 14Z"
+                stroke="#8B9E7E"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <h3>Espace couple</h3>
+          <p>Partagez votre parcours avec votre partenaire</p>
+        </div>
+        <div class="omea-grid__item">
+          <div class="omea-grid__item__icon omea-grid__item__icon--red">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21"
+                stroke="#F19880"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16 3.12805C16.8578 3.35042 17.6174 3.85132 18.1597 4.55211C18.702 5.25291 18.9962 6.11394 18.9962 7.00005C18.9962 7.88616 18.702 8.74719 18.1597 9.44799C17.6174 10.1488 16.8578 10.6497 16 10.8721"
+                stroke="#F19880"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M22 21V19C21.9993 18.1137 21.7044 17.2528 21.1614 16.5523C20.6184 15.8519 19.8581 15.3516 19 15.13"
+                stroke="#F19880"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z"
+                stroke="#F19880"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <h3>Espace d’échanges</h3>
+          <p>Rejoignez une communauté bienveillante et solidaire</p>
+        </div>
+      </div>
+    </section>
+    <section id="section3" class="omea-section omea-section3">
+      <h2>
+        Comment fonctionne <span class="text-secondary">l'application ?</span>
+      </h2>
+      <p>
+        Un accompagnement complet pour vous aider à mieux comprendre, organiser
+        et vivre votre parcours au quotidien
+      </p>
+      <div class="omea-section__application">
+        <div class="omea-section__application__list">
+          <h3>Une prise en main simple</h3>
+          <p>
+            Une vidéo vous guide pas à pas pour découvrir l'application et
+            l'utiliser facilement dès les premiers jours.
+          </p>
+          <h3>Un accompagnement qui s'adapte à vous</h3>
+          <p>
+            Parce que chaque parcours PMA est unique, Oméa s'adapte à ce vous
+            vivez, ressentez et traversez. Grâce à un questionnaire
+            hebdomadaire, l'application vous propose des recommandations
+            personnalisées.
+          </p>
+          <h3>Un soutien au quotidien</h3>
+          <p>
+            Suivez votre protocole, recevez vos rappels et retrouvez vos
+            informations importantes dans un espace pensé pour alléger votre
+            charge mentale.
+          </p>
+        </div>
+        <div class="omea-section__application__image">
+          <img
+            alt="Illustration fonctionnement de l'application"
+            src="assets/images/capture.png"
+          />
+        </div>
+      </div>
+      <button>Application bientôt disponible</button>
+    </section>
+    <section class="omea-section omea-section4">
+      <h2>
+        Plus de 1300 femmes* nous ont
+        <span class="text-secondary">confié leur histoire</span>
+      </h2>
+      <p>
+        Vous aussi, contribuez à faire évoluer l’accompagnement des femmes en
+        parcours PMA en participant à notre enquête afin de partager votre
+        ressenti
+      </p>
+      <a
+        href="https://docs.google.com/forms/d/1N0gqRZqzmpRuaMEk_p0WyEvHCy3VjRAKS1DHlPNQfF4/viewform?edit_requested=true"
+        target="_blank"
+      >
+        <button>Répondre au questionnaire</button>
+      </a>
+      <div class="omea-grid omea-grid--3-columns">
+        <div class="omea-grid__item">
+          <span class="omea-stat-big">97%</span>
+          <p>ressentent une forte charge mentale liée à la PMA</p>
+        </div>
+        <div class="omea-grid__item">
+          <span class="omea-stat-big">80%</span>
+          <p>expriment un besoin d'accompagnement personnalisé</p>
+        </div>
+        <div class="omea-grid__item">
+          <span class="omea-stat-big">73,6%</span>
+          <p>
+            souhaitent être accompagnées sur la gestion du stress et des
+            émotions
+          </p>
+        </div>
+      </div>
+      <span class="omea-caption">
+        *Plus de 1300 femmes ont répondu au questionnaire d’enquête terrain
+        accessible depuis Mars 2026
+      </span>
+    </section>
+    <section id="section5" class="omea-section omea-section5">
+      <div class="omea-section5__left">
+        <h2>Notre <span class="text-secondary">équipe</span></h2>
+        <blockquote>
+          <div class="omea-quote omea-quote--start">
+            <svg width="24" height="24"><use href="#icon-quote" /></svg>
+          </div>
+          <p>
+            Dans un parcours PMA, on peut vite se sentir seule face aux
+            rendez-vous, aux traitements et à l’attente.
+          </p>
+          <p>
+            Nous avons créé Oméa pour devenir ce soutien du quotidien : un
+            endroit pour s’organiser, comprendre et avancer plus sereinement.
+          </p>
+          <div class="omea-quote omea-quote--end">
+            <svg width="24" height="24"><use href="#icon-quote" /></svg>
+          </div>
+        </blockquote>
+        <div class="omea-section5__founders">
+          <div class="omea-section5__founder">
+            <h4>Marine Haillouy</h4>
+            <a
+              href="https://www.linkedin.com/in/marine-haillouy-737983a4/"
+              target="_blank"
+            >
+              <div class="omea-section5__founder__icon">
+                <svg width="20" height="20">
+                  <use href="#icon-linkedin-pink" />
+                </svg>
+              </div>
+            </a>
+          </div>
+          <div class="omea-section5__founder">
+            <h4>Priscillia Boccia</h4>
+            <a
+              href="https://www.linkedin.com/in/priscillia-boccia/"
+              target="_blank"
+            >
+              <div class="omea-section5__founder__icon">
+                <svg width="20" height="20">
+                  <use href="#icon-linkedin-pink" />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="omea-section5__right">
+        <img
+          alt="Photo de l'équipe Oméa Fertilité"
+          src="assets/images/team.png"
+        />
+      </div>
+    </section>
+    <section class="omea-section omea-section6">
+      <div class="omea-newsletter">
+        <div class="omea-newsletter__star">
+          <svg
+            width="132"
+            height="144"
+            viewBox="0 0 132 144"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M86.7276 4.9985L90.0553 56.2303L129.622 84.3166C133.591 87.1352 132.003 93.8335 127.271 94.1982L80.1026 97.8126L54.2437 140.788C51.6487 145.098 45.4817 143.374 45.1458 138.234L41.818 87.0026L2.25128 58.9162C-1.71761 56.0977 -0.130091 49.3994 4.60205 49.0346L51.7708 45.4202L77.6296 2.44518C80.2247 -1.86559 86.3918 -0.141264 86.7276 4.9985Z"
+              fill="#37231D"
+            />
+          </svg>
+        </div>
+        <h2>
+          Soyez parmi les premières
+          <span class="text-secondary">à découvrir Oméa</span>
+        </h2>
+        <h4>L'application est actuellement en cours de développement.</h4>
+        <p>
+          Inscrivez-vous dès maintenant pour rejoindre notre liste d’attente,
+          être informée du lancement et bénéficier d'un accès prioritaire.
+        </p>
+        <div class="omea-newsletter__form">
+          <input
+            id="newsletter-main"
+            type="email"
+            placeholder="Saisissez votre adresse mail"
+            aria-label="Adresse e-mail pour la newsletter"
+          />
+          <button class="omea-newsletter__button">
+            <svg width="27" height="27"><use href="#icon-send" /></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="omea-section omea-section7">
+      <div class="omea-section7__left">
+        <h2>L'application <span class="text-secondary">Oméa</span></h2>
+        <p>
+          L’application de suivi PMA complet, qui vous accompagne dans votre
+          parcours, et vous soutient émotionnellement sera bientôt disponible
+          sur
+        </p>
+        <div class="omea-section7__stores">
+          <a href="#">
+            <img
+              src="assets/images/google-play.png"
+              alt="Disponible sur Google Play"
+              height="58"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="assets/images/app-store.png"
+              alt="Disponible sur l'App Store"
+              height="58"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="omea-section7__right">
+        <img
+          alt="Illustration de l'application Oméa"
+          src="assets/images/thanks.png"
+        />
+      </div>
+    </section>
+    <footer class="omea-footer">
+      <div class="omea-footer__container">
+        <div class="omea-footer__newsletter">
+          <img
+            alt="Logo Oméa Fertilité"
+            class="omea-footer__logo"
+            src="assets/images/omea-white.png"
+          />
+          <div style="width: 100%">
+            <h4>Newsletter</h4>
+            <div
+              class="omea-newsletter__form"
+              style="justify-content: flex-start"
+            >
+              <input
+                id="newsletter-footer"
+                type="email"
+                placeholder="Saisissez votre adresse mail"
+                aria-label="Adresse e-mail pour la newsletter"
+              />
+              <button class="omea-newsletter__button">
+                <svg width="27" height="27"><use href="#icon-send" /></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="omea-footer__menu">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#section3">L’application</a></li>
+            <li><a href="#section2">Suivi de PMA</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Télécharger l’app</a></li>
+          </ul>
+        </div>
+        <div class="omea-footer__menu">
+          <h4>Contact</h4>
+          <ul>
+            <li>
+              <a href="mailto:contact.omea.pma@gmail.com"
+                >contact.omea.pma@gmail.com</a
+              >
+            </li>
+            <li>
+              <div class="omea-footer__social">
+                <a
+                  href="https://www.linkedin.com/company/omea-fertilite/"
+                  target="_blank"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_40000392_3257)">
+                      <path
+                        d="M14.1667 1.6665H5.83341C3.53223 1.6665 1.66675 3.53198 1.66675 5.83317V14.1665C1.66675 16.4677 3.53223 18.3332 5.83341 18.3332H14.1667C16.4679 18.3332 18.3334 16.4677 18.3334 14.1665V5.83317C18.3334 3.53198 16.4679 1.6665 14.1667 1.6665Z"
+                        stroke="white"
+                        stroke-width="1.66667"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M13.3333 9.47476C13.4361 10.1683 13.3176 10.8766 12.9947 11.4989C12.6718 12.1213 12.1609 12.6259 11.5346 12.9412C10.9083 13.2564 10.1986 13.3661 9.50641 13.2547C8.81419 13.1433 8.17472 12.8165 7.67895 12.3207C7.18318 11.825 6.85636 11.1855 6.74497 10.4933C6.63359 9.80106 6.74331 9.09134 7.05852 8.46507C7.37374 7.83881 7.87841 7.32788 8.50074 7.00496C9.12307 6.68205 9.83138 6.56359 10.5249 6.66643C11.2324 6.77133 11.8873 7.10098 12.393 7.60669C12.8987 8.11239 13.2283 8.76733 13.3333 9.47476Z"
+                        stroke="white"
+                        stroke-width="1.66667"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14.5833 5.4165H14.5916"
+                        stroke="white"
+                        stroke-width="1.66667"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_40000392_3257">
+                        <rect width="20" height="20" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </a>
+              </div>
+              <div class="omea-footer__social">
+                <a
+                  href="https://www.linkedin.com/company/omea-fertilite/"
+                  target="_blank"
+                >
+                  <svg width="20" height="20">
+                    <use href="#icon-linkedin-white" />
+                  </svg>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="omea-footer__rights">
+        <span>&copy; 2026 Oméa. Tous droits réservés.</span>
+        <span>contact.omea.pma@gmail.com</span>
+      </div>
+    </footer>
+  </body>
+</html>
