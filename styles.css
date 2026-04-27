@@ -890,7 +890,7 @@ footer.omea-footer {
 
   .omea-section__application__list {
     border-left: none;
-    border-top: 3px solid var(--secondary-color);
+    border-top: 1px solid var(--secondary-color);
     padding: 24px 0 0;
     margin-top: 24px;
     margin-bottom: 24px;
@@ -991,7 +991,7 @@ footer.omea-footer {
 
   /* ---- Section 6 (newsletter) ---- */
   .omea-section6 {
-    padding: 40px var(--section-padding-x);
+    padding: 40px var(--section-padding-x) 0;
   }
 
   .omea-newsletter {
