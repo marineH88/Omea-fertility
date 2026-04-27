@@ -251,7 +251,7 @@ header {
 
 .omea-grid {
   display: grid;
-  padding: 40px var(--section-padding-x) 120px;
+  padding: 40px var(--section-padding-x) 40px;
 }
 
 .omea-grid--4-columns {
@@ -374,7 +374,7 @@ header {
 .omea-grid--3-columns {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  padding: 30px 120px 100px;
+  padding: 30px 120px 60px;
 }
 
 .omea-grid--3-columns .omea-grid__item {
