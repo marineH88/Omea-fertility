@@ -599,6 +599,10 @@ header {
   color: var(--primary-color);
 }
 
+.omea-newsletter__button .omea-btn-icon-send {
+  display: none;
+}
+
 .omea-newsletter__privacy {
   font-size: 11px;
   color: var(--primary-color);
@@ -1111,6 +1115,23 @@ footer.omea-footer {
     width: 67px;
     min-width: 67px;
     flex-shrink: 0;
+  }
+
+  .omea-newsletter__button {
+    display: inline-flex;
+    gap: 0;
+    width: 52px;
+    min-width: 52px;
+    flex-shrink: 0;
+  }
+
+  .omea-newsletter__button .omea-btn-icon-email,
+  .omea-newsletter__button .omea-btn-text {
+    display: none;
+  }
+
+  .omea-newsletter__button .omea-btn-icon-send {
+    display: block;
   }
 
   /* ---- Section 7 ---- */
