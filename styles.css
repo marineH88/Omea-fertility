@@ -192,7 +192,8 @@ header {
 }
 
 .omea-section__left {
-  max-width: 860px;
+  max-width: 900px;
+  width: 100%;
 }
 
 .omea-section__banner {
