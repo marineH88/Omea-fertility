@@ -1295,98 +1295,110 @@ footer.omea-footer {
     text-align: center;
   }
 }
+
 /* ============================================================
-   FORMULAIRE BREVO - VERSION LARGE
+   FORMULAIRE BREVO - GLOBAL
+   S'applique à tous les formulaires Brevo de la page
    ============================================================ */
 
-.omea-section6 {
-  width: 100%;
-  padding: 60px 40px !important;
-  box-sizing: border-box;
-}
-
-.omea-section6 .omea-newsletter {
+.sib-form {
   width: 100% !important;
-  max-width: 1200px !important;
-  min-width: 0 !important;
-  box-sizing: border-box;
+  max-width: 100% !important;
+  padding: 0 !important;
+  background-color: transparent !important;
 }
 
-/* Wrapper dans lequel tu as collé Brevo */
-.omea-section6 .omea-newsletter__form {
-  width: 100% !important;
-  max-width: 1100px !important;
-  display: block !important;
-}
-
-/* Conteneurs Brevo */
-.omea-section6 .sib-form,
-.omea-section6 .sib-form-container,
-.omea-section6 #sib-form-container,
-.omea-section6 #sib-container,
-.omea-section6 #sib-form {
+.sib-form-container,
+#sib-form-container,
+#sib-container,
+#sib-form {
   width: 100% !important;
   max-width: 1100px !important;
   box-sizing: border-box !important;
 }
 
 /* Cadre intérieur Brevo */
-.omea-section6 #sib-container {
+#sib-container {
   padding: 32px 48px !important;
+  border-radius: 8px !important;
 }
 
 /* Champ email */
-.omea-section6 .entry__field,
-.omea-section6 #EMAIL {
+#sib-container .entry__field,
+#sib-container #EMAIL {
   width: 100% !important;
   max-width: none !important;
   box-sizing: border-box !important;
 }
 
+#sib-container #EMAIL {
+  height: 52px !important;
+  font-size: 16px !important;
+}
+
 /* Ligne checkbox + texte */
-.omea-section6 .entry__choice label {
+#sib-container .entry__choice label {
   display: flex !important;
   align-items: flex-start !important;
   gap: 12px !important;
   width: 100% !important;
 }
 
-/* Texte de l’opt-in */
-.omea-section6 .entry__choice p {
+/* Carré checkbox */
+#sib-container .checkbox {
+  flex-shrink: 0 !important;
+  margin-top: 6px !important;
+}
+
+/* Texte opt-in */
+#sib-container .entry__choice p {
   max-width: 900px !important;
   margin: 0 !important;
   text-align: left !important;
+  font-family: var(--font-body) !important;
   font-size: 18px !important;
   line-height: 1.45 !important;
+  color: #37231d !important;
 }
 
-/* Petit texte de désinscription */
-.omea-section6 .entry__specification {
+/* Texte désinscription */
+#sib-container .entry__specification {
   display: block !important;
   margin-top: 16px !important;
   text-align: left !important;
+  font-family: var(--font-body) !important;
   font-size: 14px !important;
   line-height: 1.35 !important;
 }
 
-/* Bouton Brevo aligné à gauche */
-.omea-section6 .sib-form-block {
+/* Bouton */
+#sib-container .sib-form-block {
   text-align: left !important;
 }
 
-/* Responsive mobile */
-@media (max-width: 768px) {
-  .omea-section6 {
-    padding: 40px 20px !important;
-  }
+#sib-container .sib-form-block__button {
+  font-family: var(--font-body) !important;
+  background-color: var(--secondary-color) !important;
+  border-radius: 6px !important;
+}
 
-  .omea-section6 #sib-container {
+/* ============================================================
+   BREVO MOBILE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  #sib-container {
     padding: 24px 20px !important;
   }
 
-  .omea-section6 .entry__choice p {
+  #sib-container .entry__choice p {
     max-width: 100% !important;
-    font-size: 15px !important;
-    line-height: 1.4 !important;
+    font-size: 16px !important;
+    line-height: 1.45 !important;
+  }
+
+  #sib-container .entry__specification {
+    font-size: 12px !important;
+    line-height: 1.3 !important;
   }
 }
