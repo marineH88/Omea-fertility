@@ -1346,21 +1346,21 @@ footer.omea-footer {
 }
 /* BREVO HERO uniquement */
 .omea-section1 #sib-container .sib-form-block p {
-  font-family: var(--font-body) !important;
-  color: var(--secondary-color) !important;
+  font-family: "Montserrat", sans-serif !important;
+  color: #f19880 !important;
   text-align: left !important;
 }
 
 .omea-section1 #sib-container .entry__choice p {
-  font-family: var(--font-body) !important;
+  font-family: "Montserrat", sans-serif !important;
   font-size: 12px !important;
   line-height: 1.3 !important;
-  color: var(--primary-color) !important;
+  color: #37231d !important;
   text-align: left !important;
 }
 
 .omea-section1 #sib-container .entry__specification {
-  font-family: var(--font-body) !important;
+  font-family: "Montserrat", sans-serif !important;
   font-size: 11px !important;
   line-height: 1.3 !important;
   color: #6b4e45 !important;
