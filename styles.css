@@ -1296,3 +1296,12 @@ footer.omea-footer {
     text-align: center;
   }
 }
+/* Réduire uniquement le texte opt-in Brevo */
+#sib-container .entry__choice p {
+  font-size: 12px !important;
+  line-height: 1.3 !important;
+}
+#sib-container .entry__specification {
+  font-size: 11px !important;
+  line-height: 1.3 !important;
+}
